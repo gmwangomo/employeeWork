@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("api/v1/employees")
+@RequestMapping("employees")
 public class EmployeeController {
 
     private EmployeeService employeeService;
@@ -24,7 +24,7 @@ public class EmployeeController {
     }
 
     // building get All Employee REST API
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Employee>> getAllEmployee(){
         List<Employee> employees = employeeService.getAllEmployee();
         return new ResponseEntity<>(employees, HttpStatus.OK);
