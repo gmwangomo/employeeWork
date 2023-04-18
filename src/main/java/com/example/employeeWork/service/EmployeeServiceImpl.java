@@ -6,20 +6,21 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
 public class EmployeeServiceImpl implements EmployeeService{
     private EmployeeRepository employeeRepository;
     @Override
-    public Employee createEmployee(Employee employeeWork) {
-        Employee EmployeeWork = new Employee();
-        return employeeRepository.save(EmployeeWork);
+    public Employee createEmployee(Employee employee) {
+        return employeeRepository.save(employee);
     }
 
     @Override
     public Employee getEmployeeById(Long employeeId) {
-        return employeeRepository.findById(employeeId);
+        Optional<Employee> optionalEmployee = employeeRepository.findById(employeeId);
+        return optionalEmployee.get();
     }
 
     @Override
