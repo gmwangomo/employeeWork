@@ -35,7 +35,7 @@ public class EmployeeServiceImpl implements EmployeeService{
         existingEmployee.setLastname(employee.getLastname());
         existingEmployee.setDepartment(employee.getDepartment());
         existingEmployee.setEmail(employee.getEmail());
-        return null;
+        return existingEmployee;
     }
 
     @Override

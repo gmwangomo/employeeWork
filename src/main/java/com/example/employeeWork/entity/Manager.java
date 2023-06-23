@@ -11,24 +11,21 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "employees")
-public class Employee {
+@Table(name = "Manager")
+public class Manager {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
-    @Column(nullable = false)   // using the nullable =  false means not null
-    private String firstname;
     @Column(nullable = false)
-    private String lastname;
+    private String firstName;
     @Column(nullable = false)
-    private String department;
+    private String lastName;
     @Column(nullable = false)
-    private Integer salary;
+    private String sex;
     @Column(nullable = false, unique = true)
     private String email;
 
-//    @ManyToOne
-//    @JoinColumn(name = "managerId")
-//    private Manager manager;
-
+//    @OneToMany
+//    @JoinColumn( name = "EmployeeId")
+//    private Employee employee;
 }
