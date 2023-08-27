@@ -30,7 +30,7 @@ public class EmployeeController {
         return new ResponseEntity<>(employees, HttpStatus.OK);
     }
 
-    // Building get by id Employee REAT API
+    // Building get by id Employee REsT API
     @GetMapping("{id}")
     public ResponseEntity<Employee> getEmpoyeeById(@PathVariable("id") Long employeeId){
         Employee employee = employeeService.getEmployeeById(employeeId);
